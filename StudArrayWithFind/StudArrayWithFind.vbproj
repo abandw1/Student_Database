@@ -72,10 +72,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\11-StArrRec-VB-06-Added-2-Fields.Designer.vb">
-      <DependentUpon>11-StArrRec-VB-06-Added-2-Fields.vb</DependentUpon>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\11-StArrRec-VB-06-Added-2-Fields.vb">
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -95,8 +96,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\11-StArrRec-VB-06-Added-2-Fields.resx">
-      <DependentUpon>11-StArrRec-VB-06-Added-2-Fields.vb</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
