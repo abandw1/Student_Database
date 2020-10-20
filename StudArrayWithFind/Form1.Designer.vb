@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class StudentDatabaseForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -36,6 +36,8 @@ Partial Class Form1
         Me.btnAddStud = New System.Windows.Forms.Button()
         Me.lstStud = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtPhone = New System.Windows.Forms.MaskedTextBox()
+        Me.txtPaid = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -153,11 +155,31 @@ Partial Class Form1
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "List of entered students (for testing)"
         '
-        'Form1
+        'txtPhone
+        '
+        Me.txtPhone.Location = New System.Drawing.Point(248, 129)
+        Me.txtPhone.Mask = "0000-000-000"
+        Me.txtPhone.Name = "txtPhone"
+        Me.txtPhone.Size = New System.Drawing.Size(100, 20)
+        Me.txtPhone.TabIndex = 5
+        '
+        'txtPaid
+        '
+        Me.txtPaid.AutoSize = True
+        Me.txtPaid.Location = New System.Drawing.Point(357, 129)
+        Me.txtPaid.Name = "txtPaid"
+        Me.txtPaid.Size = New System.Drawing.Size(47, 17)
+        Me.txtPaid.TabIndex = 6
+        Me.txtPaid.Text = "Paid"
+        Me.txtPaid.UseVisualStyleBackColor = True
+        '
+        'StudentDatabaseForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.txtPaid)
+        Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.lstStud)
         Me.Controls.Add(Me.btnAddStud)
@@ -172,8 +194,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "StudentDatabaseForm"
+        Me.Text = "Student Database Form"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -195,4 +217,6 @@ Partial Class Form1
 
     Friend WithEvents lstStud As ListBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents txtPhone As MaskedTextBox
+    Friend WithEvents txtPaid As CheckBox
 End Class
