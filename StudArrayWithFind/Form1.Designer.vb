@@ -28,9 +28,7 @@ Partial Class StudentDatabaseForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtLastName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtDOB = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtGender = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtAvMk = New System.Windows.Forms.TextBox()
         Me.btnAddStud = New System.Windows.Forms.Button()
@@ -38,6 +36,9 @@ Partial Class StudentDatabaseForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtPhone = New System.Windows.Forms.MaskedTextBox()
         Me.txtPaid = New System.Windows.Forms.CheckBox()
+        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -76,6 +77,7 @@ Partial Class StudentDatabaseForm
         '
         'txtLastName
         '
+        Me.txtLastName.BackColor = System.Drawing.Color.Lavender
         Me.txtLastName.Location = New System.Drawing.Point(142, 83)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(100, 20)
@@ -90,13 +92,6 @@ Partial Class StudentDatabaseForm
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Date of Birth"
         '
-        'txtDOB
-        '
-        Me.txtDOB.Location = New System.Drawing.Point(248, 83)
-        Me.txtDOB.Name = "txtDOB"
-        Me.txtDOB.Size = New System.Drawing.Size(100, 20)
-        Me.txtDOB.TabIndex = 5
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -105,13 +100,6 @@ Partial Class StudentDatabaseForm
         Me.Label5.Size = New System.Drawing.Size(42, 13)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Gender"
-        '
-        'txtGender
-        '
-        Me.txtGender.Location = New System.Drawing.Point(354, 83)
-        Me.txtGender.Name = "txtGender"
-        Me.txtGender.Size = New System.Drawing.Size(100, 20)
-        Me.txtGender.TabIndex = 7
         '
         'Label6
         '
@@ -124,6 +112,7 @@ Partial Class StudentDatabaseForm
         '
         'txtAvMk
         '
+        Me.txtAvMk.BackColor = System.Drawing.Color.Lavender
         Me.txtAvMk.Location = New System.Drawing.Point(460, 83)
         Me.txtAvMk.Name = "txtAvMk"
         Me.txtAvMk.Size = New System.Drawing.Size(100, 20)
@@ -157,7 +146,7 @@ Partial Class StudentDatabaseForm
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(248, 129)
+        Me.txtPhone.Location = New System.Drawing.Point(149, 132)
         Me.txtPhone.Mask = "0000-000-000"
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(100, 20)
@@ -166,18 +155,55 @@ Partial Class StudentDatabaseForm
         'txtPaid
         '
         Me.txtPaid.AutoSize = True
-        Me.txtPaid.Location = New System.Drawing.Point(357, 129)
+        Me.txtPaid.Location = New System.Drawing.Point(267, 132)
         Me.txtPaid.Name = "txtPaid"
         Me.txtPaid.Size = New System.Drawing.Size(47, 17)
         Me.txtPaid.TabIndex = 6
         Me.txtPaid.Text = "Paid"
         Me.txtPaid.UseVisualStyleBackColor = True
         '
+        'MaskedTextBox2
+        '
+        Me.MaskedTextBox2.BackColor = System.Drawing.Color.Lavender
+        Me.MaskedTextBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(248, 83)
+        Me.MaskedTextBox2.Mask = "00/00/0000"
+        Me.MaskedTextBox2.Name = "MaskedTextBox2"
+        Me.MaskedTextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.MaskedTextBox2.TabIndex = 18
+        Me.MaskedTextBox2.ValidatingType = GetType(Date)
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(356, 80)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(48, 17)
+        Me.RadioButton1.TabIndex = 19
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Male"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(356, 103)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(59, 17)
+        Me.RadioButton2.TabIndex = 20
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Female"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
         'StudentDatabaseForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Thistle
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.RadioButton1)
+        Me.Controls.Add(Me.MaskedTextBox2)
         Me.Controls.Add(Me.txtPaid)
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.Label8)
@@ -186,14 +212,13 @@ Partial Class StudentDatabaseForm
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtAvMk)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtDOB)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtLastName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
+        Me.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Name = "StudentDatabaseForm"
         Me.Text = "Student Database Form"
         Me.ResumeLayout(False)
@@ -207,9 +232,7 @@ Partial Class StudentDatabaseForm
     Friend WithEvents Label3 As Label
     Friend WithEvents txtLastName As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtDOB As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtGender As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtAvMk As TextBox
     Friend WithEvents btnAddStud As Button
@@ -219,4 +242,7 @@ Partial Class StudentDatabaseForm
     Friend WithEvents Label8 As Label
     Friend WithEvents txtPhone As MaskedTextBox
     Friend WithEvents txtPaid As CheckBox
+    Friend WithEvents MaskedTextBox2 As MaskedTextBox
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
 End Class
