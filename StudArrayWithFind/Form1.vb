@@ -1,5 +1,6 @@
 ﻿Public Class StudentDatabaseForm
     'set up a record or "class" for a student
+    Public tempgender As Char
     Class STUDENT
         Public firstname As String
         Public lastname As String
@@ -8,6 +9,7 @@
         Public avMk As Single
         Public phoneNo As String
         Public paid As Boolean
+
     End Class
     Dim students(9) As STUDENT
     Dim studentCount As Integer = 0
@@ -49,11 +51,18 @@
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
+        If MaleBtn.Checked Then
+            tempgender = "M"
+        ElseIf Female.Checked Then
+            tempgender = "F"
+        Else
+            tempgender = "O"
+        End If
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
         students(studentCount).firstname = txtFirstName.Text
-        students(studentCount).lastname = txtLastName.Text
+            students(studentCount).lastname = txtLastName.Text
         students(studentCount).DOB = txtDOB.Text
-        students(studentCount).gender = txtGender.Text
+        students(studentCount).gender = tempgender
         students(studentCount).avMk = txtAvMk.Text
         students(studentCount).phoneNo = txtPhone.Text
         students(studentCount).paid = txtPaid.Checked
@@ -62,7 +71,9 @@
         txtFirstName.Text = ""
         txtLastName.Text = ""
         txtDOB.Text = ""
-        txtGender.Text = ""
+        Female.Checked = False
+        MaleBtn.Checked = False
+        OtherBtn.Checked = False
         txtAvMk.Text = ""
         txtPhone.Text = ""
         txtPaid.Checked = False
@@ -79,19 +90,14 @@
         Next
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles txtPaid.CheckedChanged
-
-    End Sub
-
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
-
-    End Sub
-
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+    Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles TxtDOB.MaskInputRejected
 
     End Sub
 
     Private Sub txtAvMk_TextChanged(sender As Object, e As EventArgs) Handles txtAvMk.TextChanged
+        Dim len = txtAvMk.Text.Length
+        If len <> 0 Then
 
+        End If
     End Sub
 End Class
