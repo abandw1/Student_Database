@@ -1,6 +1,7 @@
 ﻿Public Class StudentDatabaseForm
     'set up a record or "class" for a student
     Public tempgender As Char
+    Public dotplaced As Boolean = False
     Class STUDENT
         Public firstname As String
         Public lastname As String
@@ -13,6 +14,7 @@
     End Class
     Dim students(9) As STUDENT
     Dim studentCount As Integer = 0
+    Dim Flip As Boolean = True
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'allocate memory
@@ -93,11 +95,32 @@
     Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles TxtDOB.MaskInputRejected
 
     End Sub
-
     Private Sub txtAvMk_TextChanged(sender As Object, e As EventArgs) Handles txtAvMk.TextChanged
-        Dim len = txtAvMk.Text.Length
-        If len <> 0 Then
+        If Flip = False Then
+            Flip = True
+        Else
+            Dim len As Integer = txtAvMk.Text.Length
+            Console.WriteLine(len)
+            If len > 0 Then
+                If Not IsNumeric(txtAvMk.Text(len - 1)) Then
+                    Dim temptext = txtAvMk.Text
+                    temptext = Replace(temptext, temptext(len - 1), "")
+                    If txtAvMk.Text(len - 1) = "." Then
+                        If temptext.Contains(".") = False Then
 
+                        Else
+                            Flip = False
+                            txtAvMk.Text = temptext
+                        End If
+
+
+                    Else
+                        Flip = False
+                        txtAvMk.Text = temptext
+                    End If
+                End If
+
+            End If
         End If
     End Sub
 End Class
