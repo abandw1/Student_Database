@@ -5,7 +5,7 @@
     Class STUDENT
         Public firstname As String
         Public lastname As String
-        Public DOB As Date
+        Public DOB As String
         Public gender As Char
         Public avMk As Single
         Public phoneNo As String
@@ -54,11 +54,11 @@
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
         If MaleBtn.Checked Then
-            tempgender = "M"
+            tempgender = "m"
         ElseIf Female.Checked Then
-            tempgender = "F"
+            tempgender = "f"
         Else
-            tempgender = "O"
+            tempgender = "o"
         End If
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
         students(studentCount).firstname = txtFirstName.Text
@@ -92,35 +92,22 @@
         Next
     End Sub
 
-    Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles TxtDOB.MaskInputRejected
-
-    End Sub
-    Private Sub txtAvMk_TextChanged(sender As Object, e As EventArgs) Handles txtAvMk.TextChanged
-        If Flip = False Then
-            Flip = True
-        Else
-            Dim len As Integer = txtAvMk.Text.Length
-            Console.WriteLine(len)
-            If len > 0 Then
-                If Not IsNumeric(txtAvMk.Text(len - 1)) Then
-                    Dim temptext = txtAvMk.Text
-                    temptext = Replace(temptext, temptext(len - 1), "")
-                    If txtAvMk.Text(len - 1) = "." Then
-                        If temptext.Contains(".") = False Then
-
-                        Else
-                            Flip = False
-                            txtAvMk.Text = temptext
-                        End If
 
 
-                    Else
-                        Flip = False
-                        txtAvMk.Text = temptext
-                    End If
-                End If
-
-            End If
+    Private Sub txtFirstName_TextChanged(sender As Object, e As EventArgs) Handles txtFirstName.TextChanged
+        If (txtFirstName.Text.Length = 1) Then
+            Dim First = txtFirstName.Text(0)
+            txtFirstName.Text = UCase(First)
+            txtFirstName.Select(txtFirstName.Text.Length, 0)
         End If
     End Sub
+
+    Private Sub txtLastName_TextChanged(sender As Object, e As EventArgs) Handles txtLastName.TextChanged
+        If (txtLastName.Text.Length = 1) Then
+            Dim Last = txtLastName.Text(0)
+            txtLastName.Text = UCase(Last)
+            txtLastName.Select(txtLastName.Text.Length, 0)
+        End If
+    End Sub
+
 End Class
