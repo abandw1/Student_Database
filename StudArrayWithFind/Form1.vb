@@ -2,6 +2,12 @@
     'set up a record or "class" for a student
     Public tempgender As Char
     Public dotplaced As Boolean = False
+    Public ErrorCol As Color = Color.FromArgb(255, 0, 0)
+    Public nameValid As Boolean = False
+    Public phoneValid As Boolean = False
+    Public mkValid As Boolean = False
+    Public genderValid As Boolean = False
+
     Class STUDENT
         Public firstname As String
         Public lastname As String
@@ -53,16 +59,9 @@
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
-        If MaleBtn.Checked Then
-            tempgender = "m"
-        ElseIf Female.Checked Then
-            tempgender = "f"
-        Else
-            tempgender = "o"
-        End If
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
         students(studentCount).firstname = txtFirstName.Text
-            students(studentCount).lastname = txtLastName.Text
+        students(studentCount).lastname = txtLastName.Text
         students(studentCount).DOB = txtDOB.Text
         students(studentCount).gender = tempgender
         students(studentCount).avMk = txtAvMk.Text
@@ -107,6 +106,16 @@
             Dim Last = txtLastName.Text(0)
             txtLastName.Text = UCase(Last)
             txtLastName.Select(txtLastName.Text.Length, 0)
+        End If
+        If txtLastName.Text.Length > 0 Then
+            If txtFirstName.Text.Length > 0 Then
+                If nameValid = False Then
+                    nameValid = True
+                    If nameValid And phoneValid And genderValid Then
+
+                    End If
+                End If
+            End If
         End If
     End Sub
 

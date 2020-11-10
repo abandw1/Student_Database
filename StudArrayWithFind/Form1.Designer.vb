@@ -138,7 +138,7 @@ Partial Class StudentDatabaseForm
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(149, 127)
+        Me.txtPhone.Location = New System.Drawing.Point(177, 132)
         Me.txtPhone.Mask = "0000-000-000"
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(100, 20)
@@ -147,7 +147,7 @@ Partial Class StudentDatabaseForm
         'txtPaid
         '
         Me.txtPaid.AutoSize = True
-        Me.txtPaid.Location = New System.Drawing.Point(255, 129)
+        Me.txtPaid.Location = New System.Drawing.Point(283, 131)
         Me.txtPaid.Name = "txtPaid"
         Me.txtPaid.Size = New System.Drawing.Size(47, 17)
         Me.txtPaid.TabIndex = 10
