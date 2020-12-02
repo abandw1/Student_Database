@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- Yr11 Yearly 2017 Q31
+    Consider the following fragment of code:
+ 
+	1. BEGIN Peach(pip)
+	2. RETURN pip * 1.1
+	3. END Peach
+	4.  
+	5. BEGIN Main
+	6. FOR yum from 1 to 20
+	7. PRINT(“Hmm, “ + yum + “ gives “ + Peach(yum))
+	8. NEXT
+	9. END Main
+ 
+    Re-write the code above, including a more meaningful Print statement. 
+    Re-name the subroutine and make other changes you think will help 
+    improve readability and maintainability.
+    -->
+<head>
+    <title>GST Calculator</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        var dict = {
+            GST: 1.1,
+            "GST and Duty": 1.155,
+            Excise: 1.10360,
+            Duty: 1.05,
+            "GST and Excise": 1.21396
+        };
+        function Main() {
+            var num = document.getElementById('txtPrice').value;
+            document.getElementById('txtGST_price').value = 'With ' + document.getElementById('Taxs').value + ', ' + num + ' becomes ' + (num * dict[document.getElementById('Taxs').value]);
+        }
+    </script>
+</head>
+<body>
+	<h1 style="text-decoration: underline">GST Excise, &amp; Duty Tax Calculator</h1>
+    
+    <br>
+    <label for="cars">Initial price:</label>
+
+<div>
+	<br/>
+    <textarea value = "0"id="txtPrice" rows="1" cols="30"></textarea>
+	<br/>
+    <br/>
+	</div>
+	<div>
+    The code returns:<br />
+    <textarea id="txtGST_price" rows="3" cols="30"></textarea>
+	</div>
+</body>
+</html>
